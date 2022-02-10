@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1 style="font-size: 50px;">Pomodoro</h1>
+        <div class="opt">
+            <span id="myBtn1">Beta 0.2.4</span>
+            <span id="myBtn">Setting</span>
+            <span id="myBtn2">About!</span>
+        </div>
+    </header>
+
+    <!-- Version --------------------------------------- -->
+    <div class="Popup" id="version">
+        <div class="Set_page">
+            <!-- <span class="close">&times;</span> -->
+            <div style="padding: 20px 40px 0 40px;">
+                <h1 style="text-align: center;">Version</h1>
+                <hr style="border: 0; height: 1px; background-color: #000; margin: 15px 0;">
+            </div>
+            <div class="Set-pop">
+                <div class="options">
+                    <h4>Beta 0.2.4 <small style="color: #c3c3c3;">(2022-02-10)</small></h4><hr>
+                    <div class="vs-pop">
+                        <ul>
+                            <li>Standard Timer</li>
+                            <li>Dark theme</li>
+                            <li>The 'Setting' is not ready to use</li>
+                            <li>Only available for large screen view</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+
+    <!-- Setting --------------------------------------- -->
+    <div class="Popup" id="myModal">
+        <div class="Set_page">
+            <span class="close">&times;</span>
+            <div style="padding: 20px 40px 0 40px;">
+                <h1 style="text-align: center;">Setting</h1>
+                <hr style="border: 0; height: 1px; background-color: #000; margin: 15px 0;">
+            </div>
+            <div class="Set-pop">
+                <div class="options">
+                    <h2>Display</h2>
+                    <div id="dark-btn">
+                        <span></span>
+                    </div>
+                </div>
+
+                <!-- Select Sound -->
+                <div class="options">
+                    <h2>Select Sound</h2>
+                    <div class="cus-timer">
+                        <select id="audio" size="5">
+                            <option value="Wake-up">Wake Up</option>
+                            <option value="alarmclockbell" selected>Alarm Clock Bell</option>
+                            <option value="twin-bell">Twin Bell</option>
+                            <option value="buzzer">Warning alarm Buzzer</option>
+                            <option value="Security">Security Facility Breach Alarm</option>
+                        </select>
+                    </div>
+                    <!-- <audio id="Wake-up" controls>
+                        <source src="audio/Wake-up.mp3" type="audio/mpeg">
+                    </audio> -->
+                    <audio id="myAudio" controls>
+                        <!-- <source src="audio/Alarm-clock-bell.mp3" type="audio/mpeg"> -->
+                    </audio>
+                    <!-- <audio id="twin-bell" controls>
+                        <source src="audio/Twin-bell-alarm-clock.mp3" type="audio/mpeg">
+                    </audio>
+                    <audio id="buzzer" controls>
+                        <source src="audio/warning-alarm-buzzer.mp3" type="audio/mpeg">
+                    </audio>
+                    <audio id="Security" controls>
+                        <source src="audio/security-facility-breach-alarm.mp3" type="audio/mpeg">
+                    </audio> -->
+                </div>
+
+                <!-- Select Volume -->
+                <div class="options">
+                    <h2>Select Volume</h2>
+                    <div class="cus-timer">
+                        <select name="" id="volume" size="5">
+                            <option value="0">Mute</option>
+                            <option value="0.25">25%</option>
+                            <option value="0.5" selected>50%</option>
+                            <option value="0.75">75%</option>
+                            <option value="1.0">100%</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Set Custom Times -->
+                <div class="options">
+                    <h2>Set Custom Times <small style="color: #aaaaaa; font-size: 18px;">(in minutes)</small></h2>
+                    <div class="cus-timer">
+                        <label>
+                            <p>Pomodoro</p>
+                            <input type="text" value="25" id="text-input">
+                        </label>
+
+                        <label>
+                            <p>Short Break</p>
+                            <input type="text" value="5">
+                        </label>
+
+                        <label>
+                            <p>Long Break</p>
+                            <input type="text" value="10">
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="submit-btn">
+                <button class="opt-btn" type="submit" id="save" onclick="myFunction()">Save</button>
+                <button class="opt-btn" type="reset" id="re-btn">Reset</button>
+                <button class="opt-btn" type="submit">Sound Test</button>
+                <p id="demo"></p>
+            </div>    
+        </div>
+    </div>
+
+    <!-- About ----------------------------------------- -->
+    <div class="Popup" id="about">
+        <div class="ab_page">
+            <!-- <span class="close">&times;</span> -->
+            <div style="padding: 20px 40px;">
+                <h1 style="text-align: center;">About</h1>
+                <hr style="border: 0; height: 1px; background-color: #000; margin: 15px 0;">
+            </div>
+            <div class="ab-pop">
+                <i class="far fa-copyright"> Made by AnhVo - 2022</i>
+            </div>
+        </div>
+    </div>
+
+    <!-- main content ---------------------------------- -->
+    <div class="main">
+        <div class="container">
+            <div class="selection">
+                <button id="pomo-time" value="25" onclick="pomodoroTimer()">Pomodoro</button>
+                <button id="short-time" value="5" onclick="shortTimer()">Short Break</button>
+                <button id="long-time" value="10" onclick="longTimer()">Long Break</button>
+                <!-- <hr id="Indicator"> -->
+            </div>
+
+            <!-- set-time -->
+            <div class="timer">
+                <div class="timer--part">
+                    <div class="timer-num"></div>
+                </div>
+
+                <div class="btn">
+                    <!-- start -->
+                    <button id="start-btn" onclick="start()" style="background-color: #00ad6e;">
+                        <i class="fas fa-play"> Start</i>
+                    </button>
+
+                    <!-- pause -->
+                    <button id="pause-btn" onclick="stop()" style="background-color: #f90606;">
+                        <i class="fas fa-pause"> Pause</i>
+                    </button>
+
+                    <!-- reset-time -->
+                    <button id="reset-btn" style="background-color: #ccc;">
+                        <i class="fas fa-stopwatch"> Reset</i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Event ---------------------------------------- -->
+            <div class="event">
+                <div class="event--part standard">
+                    <div>Coming Soon</div>
+                </div>
+
+                <div class="event--part media">
+                    <div>Coming Soon</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/navcontrol.js"></script>
+    <script src="js/theme.js"></script>
+    <Script src="js/timeDown.js"></Script>
+
+    <footer>
+        <i class="far fa-copyright"> Copyright by AnhVo - 2022</i>
+    </footer>
+</body>
+</html>
