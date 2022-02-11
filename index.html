@@ -194,6 +194,37 @@
         </div>
     </div>
 
+    <!-- Welcome ----------------------------------------- -->
+    <div class="welcome" id="wel-page">
+        <div class="welcome-content">
+            <h1>The best time to work</h1><br>
+            <div id="myProgress">
+                <div id="myBar"></div>
+            </div>
+            <br>
+            <!-- <button onclick="move()">Click Me</button> -->
+        </div>
+    </div>
+
+    <script>
+        function move() {
+            const element = document.getElementById("myBar");
+            var welCome = document.getElementById("wel-page");   
+
+            let width = 0;
+            const id = setInterval(frame, 10);
+            function frame() {
+                if (width === 100) {
+                    clearInterval(id);
+                    welCome.style.display = "none";
+                } else {
+                    width++; 
+                    element.style.width = width + '%'; 
+                }
+            }
+        }
+    </script>
+
     <script src="js/Control.js"></script>
     <script src="js/theme.js"></script>
     <Script src="js/timeDown.js"></Script>
