@@ -1,5 +1,4 @@
-// var saveBtn = document.getElementById("save-btn");
-
+var titleShow = document.title;
 var resetBtn = document.getElementById("reset-btn");
 var timerBtn = document.getElementsByName("timer");
 
@@ -18,6 +17,7 @@ const interfaceTime = () => {
     seconds = seconds < 10 ? "0" + seconds : seconds;
 
     display.innerHTML = `<div class="timer-num">${minutes}:${seconds}</div>`;
+    titleShow = minutes + ':' + seconds +  ' - TomatoTM';
 };
 
 function stop() {
@@ -30,6 +30,7 @@ function start() {
     interval = setInterval(() => {
         timer--;
         interfaceTime();
+        document.title = titleShow;
 
         if (timer === 0) {
             stop();
@@ -51,12 +52,15 @@ resetBtn.onclick = () => {
     interval = null;
     timer = 1500;
     interfaceTime();
+    document.title = titleShow;
 };
 
 function pomodoroTimer() {
     var x = document.getElementById("pomo-time");
     timer = 60 * x.value;
     interfaceTime();
+    document.title = titleShow;
+    
     start();
     stop();
 
@@ -65,6 +69,7 @@ function pomodoroTimer() {
         interval = null;
         timer = 1500;
         interfaceTime();
+        document.title = titleShow;
     };
 };
 
@@ -81,6 +86,7 @@ function shortTimer(){
         interval = null;
         timer = 60 * x.value;
         interfaceTime();
+        document.title = titleShow;
     };
 };
 
@@ -97,5 +103,6 @@ function longTimer(){
         interval = null;
         timer = 60 * x.value;
         interfaceTime();
+        document.title = titleShow;
     };
 };            
