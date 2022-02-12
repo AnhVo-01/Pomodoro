@@ -275,7 +275,7 @@ header{
     position: absolute;
 }
 
-/* ------ Popup -------------------------------------------------*/
+/* ------ Coming Page -------------------------------------------------*/
 .coming {
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -295,13 +295,15 @@ header{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-image: url('/images/forestbridge.jpg');
+    background-image: url('/images/valentine.jpg');
     background-position: center;
     background-size: cover;
     position: relative;
     color: white;
     font-family: "Courier New", Courier, monospace;
     font-size: 25px;
+    color: #0a0a0a;
+    font-weight: bold;
 }
 .topleft{
     position: absolute;
@@ -331,17 +333,17 @@ header{
 }
 .tmtxcontainerEXPIRED{
     justify-content: center;
+    color: #0a0a0a;
 }
 .timeText{
     display: inline-block;
-}
-.timeText span{
     background-color: tomato;
-    padding: 3px 10px;
+    padding: 0 10px 10px;
 }
 .timeText p{
     padding-top: 10px;
-    font-size:30px
+    font-size:30px;
+    color: #efefef;
 }
 
 /* ------ Popup -------------------------------------------------*/

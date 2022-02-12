@@ -28,6 +28,7 @@
                 <hr style="border: 0; height: 1px; background-color: #000; margin: 15px 0;">
             </div>
             <div class="Set-pop">
+                <!-- Beta 0.2.5 -->
                 <div class="options">
                     <h4>Beta 0.2.5 <small style="color: #c3c3c3;">(2022-02-12)</small></h4><hr>
                     <div class="vs-pop">
@@ -36,6 +37,7 @@
                         </ul>
                     </div>
                 </div>
+                <!-- Beta 0.2.4 -->
                 <div class="options">
                     <h4>Beta 0.2.4 <small style="color: #c3c3c3;">(2022-02-10)</small></h4><hr>
                     <div class="vs-pop">
@@ -54,7 +56,7 @@
     <!-- Setting --------------------------------------- -->
     <div class="Popup" id="myModal">
         <div class="Set_page">
-            <span class="close">&times;</span>
+            <span class="close" id="close-set">&times;</span>
             <div style="padding: 20px 40px 0 40px;">
                 <h1 style="text-align: center;">Setting</h1>
                 <hr style="border: 0; height: 1px; background-color: #000; margin: 15px 0;">
@@ -214,10 +216,47 @@
         </div>
     </div>
 
+    <!-- Coming Soon ----------------------------------------- -->
+    <div class="coming" id="coming-soon">
+        <div class="coming-page">
+            <span class="close" id="close-event">&times;</span>
+            <div class="topleft">
+                <p>TomatoTM</p>
+            </div>
+
+            <div class="middle">
+                <h1>COMING SOON</h1>
+                <hr>
+                <div class="tmtxcontainer">
+                    <div class="timeText">
+                        <span>Days</span>
+                        <p id="days"></p>
+                    </div>
+                    <div class="timeText">
+                        <span>Hours</span>
+                        <p id="hours"></p>
+                    </div>
+                    <div class="timeText">
+                        <span>Minutes</span>
+                        <p id="minutes"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottomleft">
+                <p>Beta 0.2.5</p>
+            </div>
+        </div>
+    </div>
+
     <script>
         function move() {
             const element = document.getElementById("myBar");
-            var welCome = document.getElementById("wel-page");   
+            var welCome = document.getElementById("wel-page"); 
+
+            var csDate = new Date("Feb 14, 2022 00:01").getTime();
+            var Now = new Date().getTime();
+            var EXPIRED = csDate - Now;
 
             let width = 0;
             const id = setInterval(frame, 10);
@@ -225,6 +264,10 @@
                 if (width === 100) {
                     clearInterval(id);
                     welCome.style.display = "none";
+
+                    if (EXPIRED > -604800000){
+                        document.getElementById("coming-soon").style.display = "block";
+                    }
                 } else {
                     width++; 
                     element.style.width = width + '%'; 
@@ -232,7 +275,7 @@
             }
         }
     </script>
-
+    <script src="js/comingsoon.js"></script>
     <script src="js/Control.js"></script>
     <script src="js/theme.js"></script>
     <Script src="js/timeDown.js"></Script>
