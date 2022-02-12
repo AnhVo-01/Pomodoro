@@ -97,6 +97,7 @@ header{
 .container{
     position: relative;
     background-color: var(--div-color);
+    min-height: 78vh;
     width: 85vw;
     left: 50%;
     transform: translate(-50%);
@@ -275,6 +276,75 @@ header{
 }
 
 /* ------ Popup -------------------------------------------------*/
+.coming {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0) ;
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    display: none;
+    transition: 0.3s;
+}
+.coming-page{
+    width: 900px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('/images/forestbridge.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 25px;
+}
+.topleft{
+    position: absolute;
+    top: 10px;
+    left: 16px;
+}
+.bottomleft{
+    position: absolute;
+    bottom: 10px;
+    left: 16px;
+}
+.middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.middle hr {
+    margin: 20px auto;
+    width: 40%;
+}
+.tmtxcontainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tmtxcontainerEXPIRED{
+    justify-content: center;
+}
+.timeText{
+    display: inline-block;
+}
+.timeText span{
+    background-color: tomato;
+    padding: 3px 10px;
+}
+.timeText p{
+    padding-top: 10px;
+    font-size:30px
+}
+
+/* ------ Popup -------------------------------------------------*/
 .Popup {
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -416,11 +486,11 @@ header{
 
 footer {
     display: flex;
-    text-align: center;
     background: var(--bg-color);
     color: var(--text-color);
     padding: 20px 0px;
     font-size: 14px;
-    align-content: center;
     justify-content: center;
+    height: 7vh;
+    align-items: center;
 }
