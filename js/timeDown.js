@@ -1,3 +1,4 @@
+// var saveBtn = document.getElementById("save-btn");
 var titleShow = document.title;
 var resetBtn = document.getElementById("reset-btn");
 var timerBtn = document.getElementsByName("timer");
@@ -5,9 +6,9 @@ var timerBtn = document.getElementsByName("timer");
 var display = document.querySelector(".timer--part");
 
 var interval = null;
-var timer = 1500;
+var inputMinutes = 1500;
 
-const interfaceTime = () => {
+const interfaceTime = (timer) => {
     var minutes, seconds;
 
     minutes = parseInt(timer / 60, 10);
@@ -22,17 +23,18 @@ const interfaceTime = () => {
 
 function stop() {
     clearInterval(interval);
+    interval = null;
 };
 
 function start() {
-    if (timer === 0) return;
+    if (inputMinutes === 0) return;
 
     interval = setInterval(() => {
-        timer--;
-        interfaceTime();
+        inputMinutes--;
+        interfaceTime(inputMinutes);
         document.title = titleShow;
 
-        if (timer === 0) {
+        if (inputMinutes === 0) {
             stop();
 
             var sound = document.getElementById("myAudio");
@@ -46,63 +48,62 @@ function start() {
 };
 
 // ----- Pomodoro ----------------------------------------------------------
-interfaceTime();
+interfaceTime(inputMinutes);
 resetBtn.onclick = () => {
     stop();
     interval = null;
-    timer = 1500;
-    interfaceTime();
+    inputMinutes = 1500;
+    interfaceTime(inputMinutes);
     document.title = titleShow;
 };
 
 function pomodoroTimer() {
-    var x = document.getElementById("pomo-time");
-    timer = 60 * x.value;
-    interfaceTime();
+    var p = document.getElementById("pomo-time");
+    inputMinutes = 60 * p.value;
+    interfaceTime(inputMinutes);
     document.title = titleShow;
     
-    start();
     stop();
-
+    start();
     resetBtn.onclick = () => {
         stop();
         interval = null;
-        timer = 1500;
-        interfaceTime();
+        inputMinutes = 60 * p.value;
+        interfaceTime(inputMinutes);
         document.title = titleShow;
     };
 };
 
 // ----- Short Break --------------------------------------------------------
 function shortTimer(){
-    stop();
-    var x = document.getElementById("short-time");
-    timer = 60 * x.value;
-    interfaceTime();
-    start();
+    var s = document.getElementById("short-time");
+    inputMinutes = 60 * s.value;
+    interfaceTime(inputMinutes);
 
+    stop();
+    start();
     resetBtn.onclick = () => {
         stop();
         interval = null;
-        timer = 60 * x.value;
-        interfaceTime();
+        inputMinutes = 60 * s.value;
+        interfaceTime(inputMinutes);
         document.title = titleShow;
     };
 };
 
 // ----- Long Break --------------------------------------------------------
 function longTimer(){
-    stop();
-    var x = document.getElementById("long-time");
-    timer = 60 * x.value;
-    interfaceTime();
-    start();
+    var l = document.getElementById("long-time");
+    inputMinutes = 60 * l.value;
+    interfaceTime(inputMinutes);
 
+    stop();
+    start();
     resetBtn.onclick = () => {
         stop();
         interval = null;
-        timer = 60 * x.value;
-        interfaceTime();
+        inputMinutes = 60 * l.value;
+        interfaceTime(inputMinutes);
         document.title = titleShow;
     };
-};            
+};
