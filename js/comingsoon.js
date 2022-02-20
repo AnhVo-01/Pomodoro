@@ -1,4 +1,4 @@
-var countDownDate = new Date("Feb 14, 2022 00:01").getTime();
+var countDownDate = new Date("Feb 20, 2022 00:01").getTime();
 var timeDisplay = document.querySelector(".tmtxcontainer");
 
 // Update the count down every 1 second

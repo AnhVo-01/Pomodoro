@@ -13,8 +13,9 @@
     <header>
         <h1 style="font-size: 50px;">Pomodoro</h1>
         <div class="opt">
-            <span id="myBtn1">Beta 0.2.5</span>
+            <span id="myBtn1">Beta 0.2.6</span>
             <span id="myBtn">Setting</span>
+            <span id="myBtn"><a href="https://forms.gle/Ab6DuBViKJ6r8jku5" target="_blank">Feedback</a></span>
             <span id="myBtn2">About!</span>
         </div>
     </header>
@@ -28,6 +29,16 @@
                 <hr style="border: 0; height: 1px; background-color: #000; margin: 15px 0;">
             </div>
             <div class="Set-pop">
+                <!-- Beta 0.2.6 -->
+                <div class="options">
+                    <h4>Beta 0.2.6 <small style="color: #c3c3c3;">(2022-02-20)</small></h4><hr>
+                    <div class="vs-pop">
+                        <ul>
+                            <li>fix bugs</li>
+                            <li>add feedback sending function (using Google Form)</li>
+                        </ul>
+                    </div>
+                </div>
                 <!-- Beta 0.2.5 -->
                 <div class="options">
                     <h4>Beta 0.2.5 <small style="color: #c3c3c3;">(2022-02-14)</small></h4><hr>
@@ -49,7 +60,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>  
+            </div>
         </div>
     </div>
 
@@ -147,12 +158,30 @@
     <div class="Popup" id="about">
         <div class="ab_page">
             <!-- <span class="close">&times;</span> -->
-            <div style="padding: 20px 40px;">
+            <div style="padding: 20px 40px 0;">
                 <h1 style="text-align: center;">About</h1>
                 <hr style="border: 0; height: 1px; background-color: #000; margin: 15px 0;">
             </div>
             <div class="ab-pop">
+                <p>Hello everyone,</p><br>
+                <p>Welcome you to my website.</p><br>
+                <p>
+                    I'm AnhVo. As a student of FPT University, and a lover of programming. <br>
+                    Currently, there are many websites providing timers Pomodoro Technique, from free to paid. <br>
+                    But I want to have a timer of my own, designed by myself; as well as improve my programming skills. And, <span style="color: tomato;">TomatoTM</span> was created.
+                </p><br>
+                <p>
+                    I'm not a web designer (not yet), and I know that my website has quite a lot of bugs. <br>
+                    If you are a Web Designer or a general user who accidentally visited this website, give me some suggestions or feedback so I can improve.
+                </p><br>
+                <!-- <p>And you're already here, I hope you enjoy it and use it.</p><br>
+                <p>Thanks,</p> -->
+                <img src="images/sign.png" alt="signature">
+            </div>
+            <div class="submit-btn">
                 <i class="far fa-copyright"> Made by AnhVo - 2022</i>
+                <a href="https://twitter.com/VAnh28663678" target="_blank"><i class="fa-brands fa-twitter-square"></i></a>
+                <a href="https://www.linkedin.com/in/v%C3%B5-anh-597363214/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </div>
     </div>
@@ -219,13 +248,14 @@
     <!-- Coming Soon ----------------------------------------- -->
     <div class="coming" id="coming-soon">
         <div class="coming-page">
-            <span class="close" id="close-event">&times;</span>
+            <span class="close" id="close-event" style="color: #000;">&times;</span>
             <div class="topleft">
                 <p>TomatoTM</p>
             </div>
 
             <div class="middle">
-                <h1>COMING SOON</h1>
+                <!-- <h1>COMING SOON</h1> -->
+                <h1>BETA 0.2.6</h1>
                 <hr>
                 <div class="tmtxcontainer">
                     <div class="timeText">
@@ -244,17 +274,17 @@
             </div>
 
             <div class="bottomleft">
-                <p>Beta 0.2.5</p>
+                <p>Coming soon</p>
             </div>
         </div>
     </div>
 
     <script>
         function move() {
-            const element = document.getElementById("myBar");
-            var welCome = document.getElementById("wel-page"); 
+            const element = document.getElementById("myBar"),
+                welCome = document.getElementById("wel-page"); 
 
-            var csDate = new Date("Feb 14, 2022 00:01").getTime();
+            var csDate = new Date("Feb 20, 2022 00:01").getTime();
             var Now = new Date().getTime();
             var EXPIRED = csDate - Now;
 
@@ -265,7 +295,7 @@
                     clearInterval(id);
                     welCome.style.display = "none";
 
-                    if (EXPIRED > -604800000){
+                    if (EXPIRED > -432000000){
                         document.getElementById("coming-soon").style.display = "block";
                     }
                 } else {
@@ -281,7 +311,7 @@
     <Script src="js/timeDown.js"></Script>
 
     <footer>
-        <i class="far fa-copyright"> Copyright by AnhVo - 2022</i>
+        <i class="far fa-copyright"> This page was created by Anh Vo - 2022</i>
     </footer>
 </body>
 </html>
