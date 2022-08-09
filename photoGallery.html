@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TomatoTM - PhotoGallery</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/photoGallery.css">
+    <script src="https://kit.fontawesome.com/a4edd5786f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1 style="font-size: 50px;"><a href="index.html">PhotoGallery</a></h1>
+        <div class="opt">
+        </div>
+            <!-- <a href="https://www.linkedin.com/in/v%C3%B5-anh-597363214/" target="_blank">My LinkedIn</a> -->
+    </header>
+
+    <div class="container">
+        <!-- Beta 0.2.4 ---------------------------------------------- -->
+        <div class="version">
+            <h4>Beta 0.2.4</h4>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="column">
+                <img src="images/0.2.4-1.png" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+                <img src="images/0.2.4-2.png"style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+                <img src="images/0.2.4-3.png" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+                <img src="images/0.2.4-4.png" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+                <img src="images/0.2.4-5.png" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+                <img src="images/0.2.4-6.png" style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
+            </div>
+        </div>
+        <!-- Beta 0.2.5 ---------------------------------------------- -->
+        <div class="version">
+            <h4>Beta 0.2.5</h4>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="column">
+                <img src="images/0.2.5-1.png" style="width:100%" onclick="openModal();currentSlide(7)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+                <img src="images/0.2.5-2.png"style="width:100%" onclick="openModal();currentSlide(8)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+                <img src="images/0.2.5-3.png" style="width:100%" onclick="openModal();currentSlide(9)" class="hover-shadow cursor">
+            </div>
+        </div>
+        <!-- Beta 0.2.6 ---------------------------------------------- -->
+        <div class="version">
+            <h4>Beta 0.2.6</h4>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="column">
+                <img src="images/0.2.6-1.png" style="width:100%" onclick="openModal();currentSlide(10)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+                <img src="images/0.2.6-2.png"style="width:100%" onclick="openModal();currentSlide(11)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+                <img src="images/0.2.6-3.png"style="width:100%" onclick="openModal();currentSlide(12)" class="hover-shadow cursor">
+            </div>
+        </div>
+    </div>
+
+    <!------ Slide Show -------------------------------------------------------------------- -->
+    <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <div class="mySlides">
+                <div class="numbertext">1 / 12</div>
+                <img src="images/0.2.4-1.png" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">2 / 12</div>
+                    <img src="images/0.2.4-2.png" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">3 / 12</div>
+                <img src="images/0.2.4-3.png" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">4 / 12</div>
+                <img src="images/0.2.4-4.png" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">5 / 12</div>
+                <img src="images/0.2.4-5.png" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">6 / 12</div>
+                <img src="images/0.2.4-6.png" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">7 / 12</div>
+                <img src="images/0.2.5-1.png" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">8 / 12</div>
+                <img src="images/0.2.5-2.png" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">9 / 12</div>
+                <img src="images/0.2.5-3.png" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">10 / 12</div>
+                <img src="images/0.2.6-1.png" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">11 / 12</div>
+                <img src="images/0.2.6-2.png" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">12 / 12</div>
+                <img src="images/0.2.6-3.png" style="width:100%">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            <!-- <div class="caption-container">
+                <p id="caption"></p>
+            </div> -->
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var captionText = document.getElementById("caption");
+
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+            captionText.innerHTML = dots[slideIndex-1].alt;
+        }
+    </script>
+    <footer>
+        <i class="far fa-copyright"> Copyright by AnhVo - 2022</i>
+    </footer>  
+</body>
+</html>
