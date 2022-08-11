@@ -12,6 +12,14 @@ reBtn.onclick = function(){
 
         localStorage.setItem("theme", "light");
     }
+
+    shortT.value = 5;
+    longT.value = 10;
+    pomodoro.value = 25;
+
+    localStorage.setItem("short-break", shortT.value);
+    localStorage.setItem("long-break", longT.value);
+    localStorage.setItem("pomodoro", pomodoro.value);
 }
 
 darkBtn.onclick = function(){

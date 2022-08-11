@@ -75,6 +75,22 @@
                 <img src="images/0.2.6-3.png"style="width:100%" onclick="openModal();currentSlide(12)" class="hover-shadow cursor">
             </div>
         </div>
+        <!-- Beta 0.2.7 ---------------------------------------------- -->
+        <div class="version">
+            <h4>Beta 0.2.7</h4>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="column">
+                <img src="images/0.2.7-1.png" style="width:100%" onclick="openModal();currentSlide(13)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+                <img src="images/0.2.7-2.png"style="width:100%" onclick="openModal();currentSlide(14)" class="hover-shadow cursor">
+            </div>
+            <div class="column">
+                <img src="images/0.2.7-3.png"style="width:100%" onclick="openModal();currentSlide(15)" class="hover-shadow cursor">
+            </div>
+        </div>
     </div>
 
     <!------ Slide Show -------------------------------------------------------------------- -->
@@ -82,52 +98,94 @@
         <span class="close cursor" onclick="closeModal()">&times;</span>
         <div class="modal-content">
             <div class="mySlides">
-                <div class="numbertext">1 / 12</div>
+                <div class="numbertext">
+                    <span id="total"></span>
+                </div>
                 <img src="images/0.2.4-1.png" style="width:100%">
             </div>
             <div class="mySlides">
-                <div class="numbertext">2 / 12</div>
+                <div class="numbertext">
+                    <span id="total"></span>
+                </div>
                     <img src="images/0.2.4-2.png" style="width:100%">
             </div>
             <div class="mySlides">
-                <div class="numbertext">3 / 12</div>
+                <div class="numbertext">
+                    <span id="total"></span>
+                </div>
                 <img src="images/0.2.4-3.png" style="width:100%">
             </div>
             <div class="mySlides">
-                <div class="numbertext">4 / 12</div>
+                <div class="numbertext">
+                    <span id="total"></span>
+                </div>
                 <img src="images/0.2.4-4.png" style="width:100%">
             </div>
             <div class="mySlides">
-                <div class="numbertext">5 / 12</div>
+                <div class="numbertext">
+                    <span id="total"></span>
+                </div>
                 <img src="images/0.2.4-5.png" style="width:100%">
             </div>
             <div class="mySlides">
-                <div class="numbertext">6 / 12</div>
+                <div class="numbertext">
+                    <span id="total"></span>
+                </div>
                 <img src="images/0.2.4-6.png" style="width:100%">
             </div>
             <div class="mySlides">
-                <div class="numbertext">7 / 12</div>
+                <div class="numbertext">
+                    <span id="total"></span>
+                </div>
                 <img src="images/0.2.5-1.png" style="width:100%">
             </div>
             <div class="mySlides">
-                <div class="numbertext">8 / 12</div>
+                <div class="numbertext">
+                    <span id="total"></span>
+                </div>
                 <img src="images/0.2.5-2.png" style="width:100%">
             </div>
             <div class="mySlides">
-                <div class="numbertext">9 / 12</div>
+                <div class="numbertext">
+                    <span id="total"></span>
+                </div>
                 <img src="images/0.2.5-3.png" style="width:100%">
             </div>
             <div class="mySlides">
-                <div class="numbertext">10 / 12</div>
+                <div class="numbertext">
+                    <span id="total"></span>
+                </div>
                 <img src="images/0.2.6-1.png" style="width:100%">
             </div>
             <div class="mySlides">
-                <div class="numbertext">11 / 12</div>
+                <div class="numbertext">
+                    <span id="total"></span>
+                </div>
                 <img src="images/0.2.6-2.png" style="width:100%">
             </div>
             <div class="mySlides">
-                <div class="numbertext">12 / 12</div>
+                <div class="numbertext">
+                    <span id="total"></span>
+                </div>
                 <img src="images/0.2.6-3.png" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">
+                    <span id="total"></span>
+                </div>
+                <img src="images/0.2.7-1.png" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">
+                    <span id="total"></span>
+                </div>
+                <img src="images/0.2.7-2.png" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">
+                    <span id="total"></span>
+                </div>
+                <img src="images/0.2.7-3.png" style="width:100%">
             </div>
 
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -140,6 +198,13 @@
     </div>
 
     <script>
+        var total = document.querySelectorAll("#total");
+
+        for (let j = 0; j < total.length; j++){
+            total[j].innerHTML = (j+1) + " / " + total.length;
+        }
+
+
         function openModal() {
             document.getElementById("myModal").style.display = "block";
         }
@@ -162,7 +227,7 @@
         function showSlides(n) {
             var i;
             var slides = document.getElementsByClassName("mySlides");
-            var captionText = document.getElementById("caption");
+            // var captionText = document.getElementById("caption");
 
             if (n > slides.length) {
                 slideIndex = 1
@@ -174,7 +239,7 @@
                 slides[i].style.display = "none";
             }
             slides[slideIndex-1].style.display = "block";
-            captionText.innerHTML = dots[slideIndex-1].alt;
+            // captionText.innerHTML = dots[slideIndex-1].alt;
         }
     </script>
     <footer>

@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/fontAwesome.js"></script>
 </head>
+<!-- <body> -->
 <body onload="move()">
     <header>
         <h1 style="font-size: 50px;">Pomodoro</h1>
         <div class="opt">
-            <span id="myBtn1">Beta 0.2.6</span>
+            <span id="myBtn1">Beta 0.2.7</span>
             <span id="myBtn">Setting</span>
             <span><a href="https://forms.gle/Ab6DuBViKJ6r8jku5" target="_blank">Feedback</a></span>
-            <span id="myBtn2"><a href="photoGallery.html">Photo Gallery</a></span>
             <span id="myBtn2">About!</span>
         </div>
     </header>
@@ -30,6 +30,16 @@
                 <hr style="border: 0; height: 1px; background-color: #000; margin: 15px 0;">
             </div>
             <div class="Set-pop">
+                <!-- Beta 0.2.7 -->
+                <div class="options">
+                    <h4>Beta 0.2.7 <small style="color: #c3c3c3;">(2022-08-11)</small></h4><hr>
+                    <div class="vs-pop">
+                        <ul>
+                            <li>Now, you can customize the time according to your work.</li>
+                            <li>You can also see the evolution of TomatoTM through the museum's photo.</li>
+                        </ul>
+                    </div>
+                </div>
                 <!-- Beta 0.2.6 -->
                 <div class="options">
                     <h4>Beta 0.2.6 <small style="color: #c3c3c3;">(2022-02-20)</small></h4><hr>
@@ -62,6 +72,9 @@
                     </div>
                 </div>
             </div>
+            <span class="submit-btn">
+                <a href="photoGallery.html" target="blank"><i class="fa-solid fa-images"> Museum</i></a>
+            </span>
         </div>
     </div>
 
@@ -93,21 +106,7 @@
                             <option value="Security">Security Facility Breach Alarm</option>
                         </select>
                     </div>
-                    <!-- <audio id="Wake-up" controls>
-                        <source src="audio/Wake-up.mp3" type="audio/mpeg">
-                    </audio> -->
-                    <audio id="myAudio" controls>
-                        <!-- <source src="audio/Alarm-clock-bell.mp3" type="audio/mpeg"> -->
-                    </audio>
-                    <!-- <audio id="twin-bell" controls>
-                        <source src="audio/Twin-bell-alarm-clock.mp3" type="audio/mpeg">
-                    </audio>
-                    <audio id="buzzer" controls>
-                        <source src="audio/warning-alarm-buzzer.mp3" type="audio/mpeg">
-                    </audio>
-                    <audio id="Security" controls>
-                        <source src="audio/security-facility-breach-alarm.mp3" type="audio/mpeg">
-                    </audio> -->
+                    <audio id="myAudio" controls></audio>
                 </div>
 
                 <!-- Select Volume -->
@@ -130,24 +129,25 @@
                     <div class="cus-timer">
                         <label>
                             <p>Pomodoro</p>
-                            <input type="text" value="25" id="text-input">
+                            <input type="number" id="pomo-time" value="25">
                         </label>
 
                         <label>
                             <p>Short Break</p>
-                            <input type="text" value="5">
+                            <input type="number" id="short-time" value="5">
                         </label>
 
                         <label>
                             <p>Long Break</p>
-                            <input type="text" value="10">
+                            <input type="number" id="long-time" value="10">
                         </label>
                     </div>
                 </div>
+                <script src="js/setting.js"></script>
             </div>
 
             <div class="submit-btn">
-                <button class="opt-btn" type="submit" id="save" onclick="myFunction()">Save</button>
+                <button class="opt-btn" type="submit" onclick="save()">Save</button>
                 <button class="opt-btn" type="reset" id="re-btn">Reset</button>
                 <button class="opt-btn" type="submit">Sound Test</button>
                 <p id="demo"></p>
@@ -191,9 +191,9 @@
     <div class="main">
         <div class="container">
             <div class="selection">
-                <button id="pomo-time" value="25" onclick="pomodoroTimer()">Pomodoro</button>
-                <button id="short-time" value="5" onclick="shortTimer()">Short Break</button>
-                <button id="long-time" value="10" onclick="longTimer()">Long Break</button>
+                <button onclick="pomodoroTimer()">Pomodoro</button>
+                <button onclick="shortTimer()">Short Break</button>
+                <button onclick="longTimer()">Long Break</button>
                 <!-- <hr id="Indicator"> -->
             </div>
 

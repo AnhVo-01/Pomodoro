@@ -1,6 +1,8 @@
 // var saveBtn = document.getElementById("save-btn");
 var titleShow = document.title;
 var resetBtn = document.getElementById("reset-btn");
+var startBtn = document.getElementById("start-btn");
+var stopBtn = document.getElementById("pause-btn");
 var timerBtn = document.getElementsByName("timer");
 
 var display = document.querySelector(".timer--part");
@@ -8,7 +10,7 @@ var display = document.querySelector(".timer--part");
 var interval = null;
 var inputMinutes = 1500;
 
-const interfaceTime = (timer) => {
+function interfaceTime(timer) {
     var minutes, seconds;
 
     minutes = parseInt(timer / 60, 10);
@@ -24,9 +26,14 @@ const interfaceTime = (timer) => {
 function stop() {
     clearInterval(interval);
     interval = null;
+
+    stopBtn.style.display = "none";
+    startBtn.style.display = "block"; 
 };
 
 function start() {
+    stopBtn.style.display = "block";
+    startBtn.style.display = "none";
     if (inputMinutes === 0) return;
 
     interval = setInterval(() => {
@@ -58,8 +65,7 @@ resetBtn.onclick = () => {
 };
 
 function pomodoroTimer() {
-    var p = document.getElementById("pomo-time");
-    inputMinutes = 60 * p.value;
+    inputMinutes = 60 * localStorage.getItem("pomodoro");
     interfaceTime(inputMinutes);
     document.title = titleShow;
     
@@ -68,7 +74,7 @@ function pomodoroTimer() {
     resetBtn.onclick = () => {
         stop();
         interval = null;
-        inputMinutes = 60 * p.value;
+        inputMinutes = 60 * localStorage.getItem("pomodoro");
         interfaceTime(inputMinutes);
         document.title = titleShow;
     };
@@ -76,8 +82,7 @@ function pomodoroTimer() {
 
 // ----- Short Break --------------------------------------------------------
 function shortTimer(){
-    var s = document.getElementById("short-time");
-    inputMinutes = 60 * s.value;
+    inputMinutes = 60 * localStorage.getItem("short-break");
     interfaceTime(inputMinutes);
 
     stop();
@@ -85,7 +90,7 @@ function shortTimer(){
     resetBtn.onclick = () => {
         stop();
         interval = null;
-        inputMinutes = 60 * s.value;
+        inputMinutes = 60 * localStorage.getItem("short-break");
         interfaceTime(inputMinutes);
         document.title = titleShow;
     };
@@ -93,8 +98,7 @@ function shortTimer(){
 
 // ----- Long Break --------------------------------------------------------
 function longTimer(){
-    var l = document.getElementById("long-time");
-    inputMinutes = 60 * l.value;
+    inputMinutes = 60 * localStorage.getItem("long-break");
     interfaceTime(inputMinutes);
 
     stop();
@@ -102,7 +106,7 @@ function longTimer(){
     resetBtn.onclick = () => {
         stop();
         interval = null;
-        inputMinutes = 60 * l.value;
+        inputMinutes = 60 * localStorage.getItem("long-break");
         interfaceTime(inputMinutes);
         document.title = titleShow;
     };

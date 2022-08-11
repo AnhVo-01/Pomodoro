@@ -154,7 +154,8 @@ header{
 
 .btn{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 30px;
     padding: 10px 20px;
     margin: 0 10px;
 }
@@ -165,6 +166,9 @@ header{
     border: none;
     font-size: 1em;
     border-radius: 6px;
+}
+#pause-btn{
+    display: none;
 }
 
 #Indicator{
@@ -302,8 +306,8 @@ header{
     position: relative;
     font-family: "Courier New", Courier, monospace;
     font-size: 25px;
-    background-color: #efefef;
     color: #0a0a0a;
+    background-color: #efefef;
     font-weight: bold;
 }
 .topleft{
