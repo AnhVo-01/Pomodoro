@@ -1,4 +1,4 @@
-$(document).ready(() => {
+$(window).on("load", () => {
     var countDownDate = new Date("Jan 22, 2023 00:01").getTime();
     
     // Update the count down every 1 second
