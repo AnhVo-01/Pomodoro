@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CATALOG>
+    <IMG>
+        <VERSION>Beta 0.2.4</VERSION>
+        <CHILD>
+            <INDEX>1</INDEX>
+            <PATH>0.2.4-1.png</PATH>
+        </CHILD>
+        <CHILD>
+            <INDEX>2</INDEX>
+            <PATH>0.2.4-2.png</PATH>
+        </CHILD>
+        <CHILD>
+            <INDEX>3</INDEX>
+            <PATH>0.2.4-3.png</PATH>
+        </CHILD>
+        <CHILD>
+            <INDEX>4</INDEX>
+            <PATH>0.2.4-4.png</PATH>
+        </CHILD>
+        <CHILD>
+            <INDEX>5</INDEX>
+            <PATH>0.2.4-5.png</PATH>
+        </CHILD>
+        <CHILD>
+            <INDEX>6</INDEX>
+            <PATH>0.2.4-6.png</PATH>
+        </CHILD>
+    </IMG>
+    <IMG>
+        <VERSION>Beta 0.2.5</VERSION>
+        <CHILD>
+            <INDEX>7</INDEX>
+            <PATH>0.2.5-1.png</PATH>
+        </CHILD>
+        <CHILD>
+            <INDEX>8</INDEX>
+            <PATH>0.2.5-2.png</PATH>
+        </CHILD>
+        <CHILD>
+            <INDEX>9</INDEX>
+            <PATH>0.2.5-3.png</PATH>
+        </CHILD>
+    </IMG>
+    <IMG>
+        <VERSION>Beta 0.2.6</VERSION>
+        <CHILD>
+            <INDEX>10</INDEX>
+            <PATH>0.2.6-1.png</PATH>
+        </CHILD>
+        <CHILD>
+            <INDEX>11</INDEX>
+            <PATH>0.2.6-2.png</PATH>
+        </CHILD>
+        <CHILD>
+            <INDEX>12</INDEX>
+            <PATH>0.2.6-3.png</PATH>
+        </CHILD>
+    </IMG>
+    <IMG>
+        <VERSION>Beta 0.2.7</VERSION>
+        <CHILD>
+            <INDEX>13</INDEX>
+            <PATH>0.2.7-1.png</PATH>
+        </CHILD>
+        <CHILD>
+            <INDEX>14</INDEX>
+            <PATH>0.2.7-2.png</PATH>
+        </CHILD>
+        <CHILD>
+            <INDEX>15</INDEX>
+            <PATH>0.2.7-3.png</PATH>
+        </CHILD>
+    </IMG>
+    <IMG>
+        <VERSION>Beta 0.3.1</VERSION>
+        <CHILD>
+            <INDEX>16</INDEX>
+            <PATH>0.3.1-1.png</PATH>
+        </CHILD>
+        <CHILD>
+            <INDEX>17</INDEX>
+            <PATH>0.3.1-2.png</PATH>
+        </CHILD>
+        <CHILD>
+            <INDEX>18</INDEX>
+            <PATH>0.3.1-3.png</PATH>
+        </CHILD>
+    </IMG>
+</CATALOG>

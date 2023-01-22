@@ -256,7 +256,7 @@ const renderCalender = () =>{
     let days = "";
 
     for(let x=firstDayIndex; x>0; x--){
-        days += `<div class="prev-date">${prevLastDay - x + 1}<span class="jDate">${lCalender.getLunarDate(i, date.getMonth()+1, date.getFullYear()).day}</span></div>`;
+        days += `<div class="prev-date">${prevLastDay - x + 1}<span class="jDate">${lCalender.getLunarDate(prevLastDay - x + 1, date.getMonth(), date.getFullYear()).day}</span></div>`;
     }
 
     for(let i=1; i<=lastDay; i++){
@@ -275,7 +275,7 @@ const renderCalender = () =>{
     }
 
     for(let j=1; j<=nextDays; j++){
-        days += `<div class="next-date">${j}<span class="jDate">${lCalender.getLunarDate(i, date.getMonth()+1, date.getFullYear()).day}</span></div>`;
+        days += `<div class="next-date">${j}<span class="jDate">${lCalender.getLunarDate(j, date.getMonth()+2, date.getFullYear()).day}</span></div>`;
     }
     monthDays.innerHTML = days;
 };
