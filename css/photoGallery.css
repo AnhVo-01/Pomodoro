@@ -109,6 +109,8 @@ footer {
 }
 .row img {
     padding: 8px;
+    height: 205px;
+    object-fit: cover;
 }
 
 .version hr{
