@@ -8,46 +8,53 @@
 /* ---------------------------------------------------------- */
 :root {
     --body-color: #efefef;
-    --bs-color: #efefef;
+    --bs-color: #f5f5f5;
     --div-color: #fff;
     --bg-color: tomato;
     --text-color: #000;
+    --shadow-color1: #ffffff;
+    --shadow-color2: rgba(0, 0, 0, 0.1);
 }
 
 .dark-theme {
     --body-color: #313335;
+    /* --bs-color: #4f575b; */
     --bs-color: #242526;
+    /* --bg-color: #242526; */
+    --bg-color: #0a0a0a;
     --div-color: #0a0a0a;
-    --bg-color: #242526;
     --text-color: #ecf3ff;
+    --shadow-color1: rgb(236, 236, 236, 0.08);
+    --shadow-color2: rgba(0, 0, 0, 0.1);
 }
 
 #dark-btn {
     position: absolute;
-    top: 22px;
-    right: 40px;
-    background-color: #ccc;
-    width: 45px;
+    top: 12px;
+    right: 30px;
+    background: #ccc;
+    width: 36px;
+    height: 18px;
     border-radius: 15px;
-    padding: 2px 3px;
     cursor: pointer;
     display: flex;
+    align-items: center;
     transition: padding-left 0.5s, background 0.5s;
 }
 
 #dark-btn span {
-    width: 18px;
-    height: 18px;
+    margin: 0 2px;
+    width: 14px;
+    height: 14px;
     background: #fff;
     border-radius: 50%;
     display: inline-block;
 }
 
 #dark-btn.dark-btn-on {
-    padding-left: 23px;
+    padding-left: 18px;
     background: #41db51;
 }
-
 /* ---------------------------------------------------------- */
 a{
     text-decoration: none;
@@ -60,113 +67,109 @@ audio{
 
 body{
     background: var(--body-color);
-    color: var(--text-color);
+    color: var(--text-color) !important;
 }
 
+.circle {
+    width: 20px;
+}
+.circle path {
+    fill: var(--text-color) !important;
+}
+.faq-wrapper .card {
+    border: none;
+    margin-bottom: 1rem;
+    background: var(--bs-color);
+    box-shadow: -3px -3px 7px var(--shadow-color1),
+    3px 3px 5px var(--shadow-color2);
+    /* -webkit-box-shadow: 0 15px 50px rgb(89 69 230 / 12%);
+    box-shadow: 0 15px 50px rgb(89 69 230 / 12%); */
+}
+/* ====================================== header ====================================== */
 header{
     display: flex;
     background: var(--bg-color);
-    justify-content: space-between;
     align-items: center;
-    padding-left: 60px;
-    height: 15vh;
+    height: 12vh;
+    min-height: 85px;
 }
-
-.opt{
-    margin-right: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.opt span{
+.navbar-brand.image {
+    width: 180px;
     cursor: pointer;
-    display: flex;
-    padding: 10px 30px;
-    background: #4d4d4d;
-    color: #e6e6e6;
-    font-weight: bold;
-    border: 1px solid #333333;
-    -webkit-box-shadow: 1px 0 0 rgb(255 255 255 / 20%) inset;
-    -moz-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.2) inset;
-    box-shadow: 1px 0 0 rgb(255 255 255 / 20%) inset;
 }
-.opt span:hover{
-    background: #000;
-    color: #e6e6e6;
+.image img {
+    width: 100%;
+    object-fit: cover;
+}
+.offcanvas-end {
+    background-color: var(--bg-color) !important;
+}
+.nav-menu .btn{
+    display: none;
 }
 
-.container{
+nav.navbar ul.nav li{
+    background: var(--div-color);
+}
+nav.navbar ul.nav li:hover{
+    background: #ff3c1a;
+}
+nav.navbar ul.nav li a{
     position: relative;
-    background-color: var(--div-color);
-    min-height: 78vh;
-    width: 85vw;
-    left: 50%;
-    transform: translate(-50%);
-    padding: 30px;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.main{
+    height: 88vh;
+    overflow: auto;
+    background-color: var(--bs-color);
 }
 
 /* ----- Selection timer type --------------------------- */
 .selection{
-    margin: 0 auto;
-    margin-bottom: 30px;
     display: flex;
+    gap: 10px;
     align-items: center;
     justify-content: center;
 }
-.selection button{
-    cursor: pointer;
-    display: flex;
-    padding: 10px 80px;
+.selection .btn{
+    outline: 0;
+    width: 100%;
+    padding: 10px 0;
     color: var(--text-color);
     font-weight: bold;
     font-size: 16px;
-    background: var(--bg-color);
     border: 1px solid #ff3c1a;
     -webkit-box-shadow: 1px 0 0 rgb(255 255 255 / 20%) inset;
     -moz-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.2) inset;
     box-shadow: 1px 0 0 rgb(255 255 255 / 20%) inset;
 }
-.selection button:hover{
+.selection .btn.active{
+    background: var(--bg-color);
+}
+.selection .btn:hover{
     background: #ff2600;
 }
-
+.selection .btn:focus{
+    box-shadow: none;
+}
 /* ---- Timer ------------------------------------------- */
 .timer{
     text-align: center;
-    padding: 24px 32px;
-    border-radius: 15px;
-    background: var(--bs-color);
-    width: 500px;
-    margin: 0 auto;
-    box-shadow: 0px 0px 5px 0px #f16d55,
-    1px 1px 6px 2px rgba(0 ,0 , 0, 0.4),
-    inset -1px -1px 10px 2px var(--div-color),
-    inset 1px 1px 10px 2px var(--div-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    /* padding: 25px 30px 30px; */
 }
 
 .timer--part{
     font-size: 100px;
-    height: 110px;
+    height: 145px;
     font-weight: bold;
-    margin-bottom: 20px;
     overflow: hidden;
 }
 
-.btn{
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 10px 20px;
-    margin: 0 10px;
-}
-.btn button{
-    cursor: pointer;
-    color: #000;
-    padding: 10px 20px;
-    border: none;
-    font-size: 1em;
-    border-radius: 6px;
-}
 #pause-btn{
     display: none;
 }
@@ -180,7 +183,6 @@ header{
     transform: translateX(15px);
     transition: transform 1s;
 }
-
 /* ----- Event --------------------------------------- */
 .event{
     display: flex;
@@ -203,47 +205,29 @@ header{
     inset 1px 1px 10px 2px var(--div-color);
 }
 /*---- button controller ------------------------------*/
-#start-btn{
-    box-shadow: 0px 0px 5px 0px #e6fff6,
-    1px 1px 6px 2px #ccffec,
-    inset -1px -1px 10px 2px #119c69,
-    inset 1px 1px 10px 2px #04aa6d;
+.timer_control{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
 }
-#start-btn:hover{
-    box-shadow: 0px 0px 5px 0px #04aa6d,
-    1px 1px 6px 2px rgba(0 ,0 , 0, 0.5),
-    inset -1px -1px 10px 2px #119c69,
-    inset 1px 1px 10px 2px #04aa6d;
+.timer_control .btn{
+    color: var(--text-color);
+    background: var(--bs-color);
+    box-shadow: -3px -3px 7px var(--shadow-color1),
+    3px 3px 5px var(--shadow-color2);
 }
-#pause-btn{
-    box-shadow: 0px 0px 5px 0px var(--bs-color),
-    1px 1px 6px 2px #ffcccc,
-    inset -1px -1px 10px 2px #e61919,
-    inset 1px 1px 10px 2px #d92626;
-}
-#pause-btn:hover{
-    box-shadow: 0px 0px 5px 0px #d92626,
-    1px 1px 6px 2px rgba(0 ,0 , 0, 0.5),
-    inset -1px -1px 10px 2px #ffb3b3,
-    inset 1px 1px 10px 2px #d92626;
-}
-#reset-btn{
-    box-shadow: 0px 0px 5px 0px #f16d55,
-    1px 1px 5px 1px #f16d55,
-    inset -1px -1px 10px 2px #ccc,
-    inset 1px 1px 10px 2px #fff
-}
-#reset-btn:hover{
-    box-shadow: 0px 0px 5px 0px #f16d55,
-    1px 1px 6px 2px rgba(0 ,0 , 0, 0.4),
-    inset -1px -1px 10px 2px var(--div-color),
-    inset 1px 1px 10px 2px var(--div-color);
+.timer_control .btn:hover, 
+.timer_control .btn:focus{
+    color: var(--text-color);
+    background: var(--bs-color);
+    box-shadow: inset -3px -3px 7px var(--shadow-color1),
+    inset 3px 3px 5px var(--shadow-color2);
 }
 
 /* ------ Welcome Page -------------------------------------------*/
 .welcome {
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 1000; /* Sit on top */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -266,6 +250,11 @@ header{
     font-size: 50px;
     color: #fff;
 }
+.welcome-content .mobile-logo{
+    display: none;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
 #myProgress {
     width: 100%;
     height: 30px;
@@ -282,12 +271,12 @@ header{
 
 /* ------ Coming Page -------------------------------------------------*/
 .coming {
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    position: fixed;
+    z-index: 1000;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
+    width: 100%;
+    height: 100%;
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0, 0, 0) ;
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
@@ -300,7 +289,7 @@ header{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-image: url('/images/Feedback.png');
+    background-image: url('/images/backgrounds/happy-lunar-new-year-2023-vietnamese.png');
     background-position: center;
     background-size: cover;
     position: relative;
@@ -310,15 +299,15 @@ header{
     background-color: #efefef;
     font-weight: bold;
 }
-.topleft{
+.topleft, .bottomleft{
     position: absolute;
-    top: 10px;
     left: 16px;
 }
+.topleft {
+    top: 10px;
+}
 .bottomleft{
-    position: absolute;
     bottom: 10px;
-    left: 16px;
 }
 .middle {
     position: absolute;
@@ -328,15 +317,18 @@ header{
     transform: translate(-50%, -50%);
     text-align: center;
 }
-.middle h1 {
+.middle h2 {
     background-color: tomato;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    font-weight: 700;
 }
 .middle hr {
     margin: 20px auto;
     width: 40%;
-    background-color: #000;
+    /* background-color: #fff; */
     border: 0;
-    height: 1px;
+    opacity: unset;
 }
 .tmtxcontainer{
     display: flex;
@@ -349,34 +341,28 @@ header{
     background-color: tomato;
 }
 .timeText{
-    display: inline-block;
+    display: flex;
     background-color: tomato;
-    padding: 0 10px 10px;
+    border-radius: 0.25rem;
+    flex-direction: column;
 }
-.timeText p{
-    padding-top: 10px;
-    font-size:30px;
+.timeText span{
+    padding: 0 10px;
     color: #efefef;
 }
-
-/* ------ Popup -------------------------------------------------*/
-.Popup {
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0) ;
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    display: none;
-    transition: 0.3s;
+.timeText p{
+    margin: 0;
+    font-size: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #fff;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
 }
-  
 /* The Close Button */
 .close {
     color: var(--text-color);
+    /* color: #fff; */
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -395,28 +381,23 @@ header{
 }
 
 /* ------ Setting ------------------------ */
-.Set_page{
-    position: absolute;
+.Set_page.modal-content{
     background: var(--bg-color);
-    width: 800px;
-    height: 600px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+}
+.modal-header{
+    padding: 10px 30px !important;
 }
 .Set-pop{
-    position: absolute;
-    top: 80px;
-    transform: translateX(10%);
-    width: 670px;
-    height: 420px;
+    width: 85%;
+    height: 450px;
+    margin: 0 auto;
     overflow-y: auto;
-    padding: 10px 30px;
 }
 ::-webkit-scrollbar { 
     display: none; 
 }
 .options{
+    position: relative;
     background: var(--div-color);
     margin-bottom: 15px;
     padding: 10px;
@@ -434,22 +415,14 @@ header{
     padding: 30px;
 }
 /* ------ About ------------------------ */
-.ab_page{
-    position: absolute;
+.ab_page.modal-content{
     background: var(--bs-color);
-    width: 800px;
     height: 600px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 .ab-pop{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 670px;
+    width: 85%;
+    margin: 0 auto;
     overflow-y: auto;
-    padding: 10px 30px;
     font-size: 1.1em;
     font-weight: bold;
     font-style: italic;
@@ -463,9 +436,7 @@ header{
     padding-top: 10px;
 }
 .cus-timer{
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 10px;
+    padding: 20px;
 }
 .cus-timer input{
     width: 8vw;
@@ -515,6 +486,6 @@ footer {
     padding: 20px 0px;
     font-size: 14px;
     justify-content: center;
-    height: 7vh;
+    height: 8vh;
     align-items: center;
 }

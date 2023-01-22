@@ -80,6 +80,11 @@ header h1 a{
     position: relative;
     background-color: var(--div-color);
     padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.version {
+    padding-top: 2em;
 }
 
 footer {

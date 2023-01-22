@@ -7,11 +7,12 @@ var timerBtn = document.getElementsByName("timer");
 
 var display = document.querySelector(".timer--part");
 
-var interval = null;
-var inputMinutes = 1500;
+let interval = null;
+let inputMinutes = 1500;
+window.sessionStorage.setItem("target", "pomo");
 
 function interfaceTime(timer) {
-    var minutes, seconds;
+    let minutes, seconds;
 
     minutes = parseInt(timer / 60, 10);
     seconds = parseInt(timer % 60, 10);
@@ -54,6 +55,24 @@ function start() {
     }, 1000);
 };
 
+
+// ------------------------------------------------------------------------
+let slideIndex = 1;
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides() {
+  let dots = document.getElementsByClassName("dot");
+
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  dots[slideIndex-1].className += " active";
+}
+
 // ----- Pomodoro ----------------------------------------------------------
 interfaceTime(inputMinutes);
 resetBtn.onclick = () => {
@@ -64,7 +83,9 @@ resetBtn.onclick = () => {
     document.title = titleShow;
 };
 
-function pomodoroTimer() {
+function pomodoroTimer(e) {
+    currentSlide(e.id);
+
     inputMinutes = 60 * localStorage.getItem("pomodoro");
     interfaceTime(inputMinutes);
     document.title = titleShow;
@@ -81,7 +102,9 @@ function pomodoroTimer() {
 };
 
 // ----- Short Break --------------------------------------------------------
-function shortTimer(){
+function shortTimer(e){
+    currentSlide(e.id);
+
     inputMinutes = 60 * localStorage.getItem("short-break");
     interfaceTime(inputMinutes);
 
@@ -97,7 +120,9 @@ function shortTimer(){
 };
 
 // ----- Long Break --------------------------------------------------------
-function longTimer(){
+function longTimer(e){
+    currentSlide(e.id);
+
     inputMinutes = 60 * localStorage.getItem("long-break");
     interfaceTime(inputMinutes);
 

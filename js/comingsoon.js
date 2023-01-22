@@ -1,8 +1,8 @@
-var countDownDate = new Date("Feb 20, 2022 00:01").getTime();
+var countDownDate = new Date("Jan 22, 2023 00:01").getTime();
 var timeDisplay = document.querySelector(".tmtxcontainer");
 
 // Update the count down every 1 second
-var countdownfunction = setInterval(function() {
+var countDownFunction = setInterval(function() {
     var now = new Date().getTime(); // Get todays date and time
 
     var distance = countDownDate - now; // Find the distance between now an the count down date
@@ -20,8 +20,21 @@ var countdownfunction = setInterval(function() {
   
     // If the count down is over, write some text 
     if (distance < 0) {
-        clearInterval(countdownfunction);
+        clearInterval(countDownFunction);
         timeDisplay.classList.toggle("tmtxcontainerEXPIRED");
         timeDisplay.innerHTML = "EXPIRED";
     }
 }, 1000);
+
+
+// Get the modal
+var csClose = document.getElementById("coming-soon");
+function closeEvent() {
+    csClose.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == csClose) {
+        csClose.style.display = "none";
+    }
+}
