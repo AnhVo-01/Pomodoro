@@ -33,7 +33,7 @@
     justify-content: center;
     width: 245px;
     height: 245px;
-    background: url(/images/backgrounds/clock.png);
+    background: url(../images/backgrounds/clock.png);
     background-size: cover;
     border: 5px solid var(--bs-color);
     border-radius: 50%;
